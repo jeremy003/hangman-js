@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+
+  <!-- Custom CSS/JS -->
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <script src=js/main.js></script>
+</head>
+
+<body>
+  <div class="title-heading">
+    <h1>Hangman</h1>
+  </div>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div id="stat-box">
+            <p>Guess a letter in the word, results will show up here.</p>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="hangman-outer-wrapper">
+            <div class="hangman-wrapper">
+              <div class="head wrong-0"></div>
+              <div class="mid-body-wrapper">
+                <div class="left-arm wrong-2"></div>
+                <div class="torso wrong-1"></div>
+                <div class="right-arm wrong-3"></div>
+              </div>
+              <div class="lower-body-wrapper">
+                <div class="left-leg wrong-4"></div>
+                <div class="right-leg wrong-5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row user-input-row">
+        <div class="col-sm-6 text-center">
+          <input id="user-input" maxlength="1" />
+          <button id="letter-submit">Check For Letter</button>
+        </div>
+        <div class="col-sm-6">
+          <ol id="word-letters">
+            <li>
+              <div class="letter-space-0">&nbsp;</div>
+            </li>
+            <li>
+              <div class="letter-space-1">&nbsp;</div>
+            </li>
+            <li>
+              <div class="letter-space-2">&nbsp;</div>
+            </li>
+            <li>
+              <div class="letter-space-3">&nbsp;</div>
+            </li>
+            <li>
+              <div class="letter-space-4">&nbsp;</div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div id="game-over-screen">
+        <div class="game-over-inside">
+          <div class="game-over-text">
+            <h2 clsss="game-over-heading"></h2>
+            <button id="play-again">Play Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

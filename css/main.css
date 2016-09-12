@@ -1,0 +1,137 @@
+.container {
+  position: relative;
+}
+
+.title-heading {
+  padding: 30px 40px;
+  background: blue;
+  background: -webkit-linear-gradient(right, blue, white);
+  background: -o-linear-gradient(left, blue, white);
+  background: -moz-linear-gradient(left, blue, white);
+  background: linear-gradient(to left, blue , white);
+}
+
+.title-heading h1 {
+  margin: 0;
+}
+
+.hangman-outer-wrapper {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.hangman-wrapper {
+  display: inline-block;
+}
+
+.head {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  visibility: hidden;
+}
+
+.mid-body-wrapper {
+  height: 100px;
+  position: relative;
+}
+
+.torso {
+  width: 2px;
+  height: 100%;
+  display: inline-block;
+  border: 1px solid black;
+  visibility: hidden;
+}
+
+.left-arm, .right-arm {
+  height: 50px;
+  width: 24px;
+  position: absolute;
+  top: 20px;
+  border-top: 2px solid black;
+  visibility: hidden;
+}
+
+.left-arm {
+  border-left: 2px solid black;
+}
+
+.right-arm {
+  right: 0;
+  border-right: 2px solid black;
+}
+
+.lower-body-wrapper {
+  height: 60px;
+  width: 30px;
+  position: relative;
+  margin: auto;
+}
+
+.left-leg, .right-leg {
+    position: absolute;
+    height: 100%;
+    width: 25px;
+    border-top: 2px solid black;
+    visibility: hidden;
+}
+
+.left-leg {
+  border-left: 2px solid black;
+}
+
+.right-leg {
+  right: 0;
+  border-right: 2px solid black;
+}
+
+.user-input-row {
+  margin-top: 40px;
+}
+
+input#user-input {
+    font-size: 40px;
+    width: 70px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button#letter-submit {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+ol#word-letters > li {
+  display: inline-block;
+  font-size: 40px;
+  padding: 0 20px;
+  border-bottom: 2px solid black;
+  margin: 0 5px;
+}
+
+ol#word-letters {
+  list-style-type: none;
+}
+
+div#game-over-screen {
+  position: absolute;
+  background: rgba(30,30,30,0.5);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: none;
+}
+
+.game-over-inside {
+  height: 100%;
+  position: relative;
+}
+
+.game-over-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
