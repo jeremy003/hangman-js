@@ -18,12 +18,19 @@
   <div class="title-heading">
     <h1>Hangman</h1>
   </div>
-  <section>
+  <section id="hangman-game">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <div id="stat-box">
-            <p>Guess a letter in the word, results will show up here.</p>
+            <p>Enter a word for someone else to play, or generate a random one here!</p>
+          </div>
+          <div>
+            <input id="user-entered-word" maxlength="10" />
+            <div class="top-buttons-wrapper">
+              <button id="submit-user-word" class="btn-main">Use This Word</button>
+              <button id="submit-random-word" class="btn-main">Give Me a Random Word</button>
+            </div>
           </div>
         </div>
         <div class="col-md-8">
@@ -46,7 +53,7 @@
       <div class="row user-input-row">
         <div class="col-sm-6 text-center">
           <input id="user-input" maxlength="1" />
-          <button id="letter-submit">Check For Letter</button>
+          <button id="letter-submit" class="btn-main">Check For Letter</button>
         </div>
         <div class="col-sm-6">
           <ol id="word-letters">

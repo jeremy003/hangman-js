@@ -2,6 +2,35 @@
   position: relative;
 }
 
+input {
+  font-size: 20px;
+  color: white;
+  background: rgba(0,0,0,0);
+  border: none;
+  border-bottom: 2px solid white;
+}
+
+input:focus {
+  outline: none;
+}
+
+.top-buttons-wrapper {
+  margin-top: 20px;
+}
+
+#hangman-game {
+  margin-top: 20px;
+}
+
+#hangman-game .container {
+  background: #377237;
+  background: -webkit-linear-gradient(bottom, #174e13, #377237);
+  background: -o-linear-gradient(top, #174e13, #377237);
+  background: -moz-linear-gradient(top, #174e13, #377237);
+  background: linear-gradient(to top, #174e13 , #377237);
+  border: 12px solid #9a6b19;
+}
+
 .title-heading {
   padding: 30px 40px;
   background: blue;
@@ -27,7 +56,7 @@
 .head {
   width: 50px;
   height: 50px;
-  border: 2px solid black;
+  border: 2px solid white;
   visibility: hidden;
 }
 
@@ -40,7 +69,7 @@
   width: 2px;
   height: 100%;
   display: inline-block;
-  border: 1px solid black;
+  border: 1px solid white;
   visibility: hidden;
 }
 
@@ -49,17 +78,17 @@
   width: 24px;
   position: absolute;
   top: 20px;
-  border-top: 2px solid black;
+  border-top: 2px solid white;
   visibility: hidden;
 }
 
 .left-arm {
-  border-left: 2px solid black;
+  border-left: 2px solid white;
 }
 
 .right-arm {
   right: 0;
-  border-right: 2px solid black;
+  border-right: 2px solid white;
 }
 
 .lower-body-wrapper {
@@ -73,21 +102,25 @@
     position: absolute;
     height: 100%;
     width: 25px;
-    border-top: 2px solid black;
+    border-top: 2px solid white;
     visibility: hidden;
 }
 
 .left-leg {
-  border-left: 2px solid black;
+  border-left: 2px solid white;
 }
 
 .right-leg {
   right: 0;
-  border-right: 2px solid black;
+  border-right: 2px solid white;
 }
 
 .user-input-row {
   margin-top: 40px;
+}
+
+#stat-box {
+  color: white;
 }
 
 input#user-input {
@@ -105,9 +138,10 @@ button#letter-submit {
 
 ol#word-letters > li {
   display: inline-block;
+  color: white;
   font-size: 40px;
   padding: 0 20px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid white;
   margin: 0 5px;
 }
 
