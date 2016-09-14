@@ -11,7 +11,7 @@
 
   <!-- Custom CSS/JS -->
   <link rel="stylesheet" type="text/css" href="css/main.css" />
-  <script src=js/main.js></script>
+  <script src=js/game-controller.js></script>
 </head>
 
 <body>
@@ -20,59 +20,48 @@
   </div>
   <section id="hangman-game">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div id="stat-box">
-            <p>Enter a word for someone else to play, or generate a random one here!</p>
+      <div class="chalkboard">
+        <div class="row">
+          <div class="col-md-4">
+            <div id="message-box">
+              <p>Enter a word for someone else to play, or generate a random word.</p>
+            </div>
           </div>
-          <div>
-            <input id="user-entered-word" maxlength="10" />
-            <div class="top-buttons-wrapper">
-              <button id="submit-user-word" class="btn-main">Use This Word</button>
-              <button id="submit-random-word" class="btn-main">Give Me a Random Word</button>
+          <div class="col-md-8">
+            <div class="hangman-outer-wrapper">
+              <div class="hangman-wrapper">
+                <div class="head wrong-0"></div>
+                <div class="mid-body-wrapper">
+                  <div class="left-arm wrong-2"></div>
+                  <div class="torso wrong-1"></div>
+                  <div class="right-arm wrong-3"></div>
+                </div>
+                <div class="lower-body-wrapper">
+                  <div class="left-leg wrong-4"></div>
+                  <div class="right-leg wrong-5"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-8">
-          <div class="hangman-outer-wrapper">
-            <div class="hangman-wrapper">
-              <div class="head wrong-0"></div>
-              <div class="mid-body-wrapper">
-                <div class="left-arm wrong-2"></div>
-                <div class="torso wrong-1"></div>
-                <div class="right-arm wrong-3"></div>
-              </div>
-              <div class="lower-body-wrapper">
-                <div class="left-leg wrong-4"></div>
-                <div class="right-leg wrong-5"></div>
-              </div>
-            </div>
+        <div class="row user-input-row">
+          <div class="col-sm-6 text-center">
+            <input id="letter-input" maxlength="1" />
+            <button id="letter-submit" class="btn btn-success">Check For Letter</button>
+          </div>
+          <div class="col-sm-6">
+            <ol id="word-letters">
+            </ol>
           </div>
         </div>
       </div>
-      <div class="row user-input-row">
-        <div class="col-sm-6 text-center">
-          <input id="user-input" maxlength="1" />
-          <button id="letter-submit" class="btn-main">Check For Letter</button>
-        </div>
-        <div class="col-sm-6">
-          <ol id="word-letters">
-            <li>
-              <div class="letter-space-0">&nbsp;</div>
-            </li>
-            <li>
-              <div class="letter-space-1">&nbsp;</div>
-            </li>
-            <li>
-              <div class="letter-space-2">&nbsp;</div>
-            </li>
-            <li>
-              <div class="letter-space-3">&nbsp;</div>
-            </li>
-            <li>
-              <div class="letter-space-4">&nbsp;</div>
-            </li>
-          </ol>
+      <div class="row">
+        <div class="bottom-input-wrapper">
+          <input id="user-entered-word" maxlength="10" />
+          <div class="bottom-buttons-wrapper">
+            <button id="submit-user-word" class="btn btn-primary">Use This Word</button>
+            <button id="submit-random-word" class="btn btn-warning">Give Me a Random Word</button>
+          </div>
         </div>
       </div>
       <div id="game-over-screen">
