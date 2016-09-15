@@ -143,6 +143,11 @@ button#submit-letter {
     margin-top: 10px;
 }
 
+.word-letters-wrapper {
+  text-align: right;
+  padding-right: 30px;
+}
+
 ol#word-letters > li {
   display: inline-block;
   color: white;
