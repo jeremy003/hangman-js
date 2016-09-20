@@ -348,7 +348,7 @@ $(document).ready(function() {
         if(guesses >= 9) {
           $("#game-over-heading").html("Game Over");
           if(correctWord === "") {
-            $("#correct-word").html("There was no word. Congradulations, you played yourself. Never play yourself.");
+            $("#correct-word").html("There was no word. Congratulations, you played yourself. Never play yourself.");
           } else {
             $("#correct-word").html('The word was "' + correctWord + '"');
           }
