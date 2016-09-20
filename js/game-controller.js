@@ -245,6 +245,7 @@ var wordsArray = [
   "your","yourself","youth","zero","zoo"
 ];
 
+var correctWord = "";
 var correctLetters = [];
 var guessedLetters = [];
 var guesses = 0;
@@ -254,7 +255,8 @@ function addToHangman() {
 }
 
 function setUpGame(word) {
-  correctLetters = word.split('');
+  correctWord = word;
+  correctLetters = word.toUpperCase().split('');
   listElements = "";
   guessedLetters = [];
 
@@ -277,7 +279,7 @@ $(document).ready(function() {
 
   $("#submit-random-word").click(function() {
     var randomWord = wordsArray[Math.floor(Math.random() * (wordsArray.length - 1))];
-    setUpGame(randomWord.toUpperCase());
+    setUpGame(randomWord);
   });
 
   $("#input-new-word").keyup(function(event) {
@@ -287,7 +289,7 @@ $(document).ready(function() {
   });
 
   $("#submit-new-word").click(function() {
-    var userWord = String($("#input-new-word").val()).toUpperCase();
+    var userWord = String($("#input-new-word").val());
     if(userWord !== "") {
       setUpGame(userWord);
       $("#input-new-word").val("");
@@ -345,6 +347,7 @@ $(document).ready(function() {
         addToHangman();
         if(guesses >= 5) {
           $("#game-over-heading").html("Game Over");
+          $("#correct-word").html('The word was "' + correctWord + '"');
           $("#game-over-screen").fadeIn(300);
         }
         guesses++;

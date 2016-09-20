@@ -188,6 +188,12 @@ div#game-over-screen {
   font-size: 80px;
 }
 
+#correct-word {
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
 #btn-play-again {
   font-size: 30px;
 }
