@@ -78,7 +78,7 @@ input:focus {
   visibility: hidden;
 }
 
-.left-arm, .right-arm {
+.left-arm-1, .right-arm-1 {
   height: 50px;
   width: 24px;
   position: absolute;
@@ -87,11 +87,23 @@ input:focus {
   visibility: hidden;
 }
 
-.left-arm {
+.left-arm-2, .right-arm-2 {
+  height: 50px;
+  width: 24px;
+  position: absolute;
+  top: 20px;
+  visibility: hidden;
+}
+
+.right-arm-1 {
+  right: 0;
+}
+
+.left-arm-2 {
   border-left: 2px solid white;
 }
 
-.right-arm {
+.right-arm-2 {
   right: 0;
   border-right: 2px solid white;
 }
@@ -103,19 +115,30 @@ input:focus {
   margin: auto;
 }
 
-.left-leg, .right-leg {
+.left-leg-1, .right-leg-1 {
     position: absolute;
     height: 100%;
-    width: 25px;
+    width: 16px;
     border-top: 2px solid white;
     visibility: hidden;
 }
 
-.left-leg {
+.left-leg-2, .right-leg-2 {
+    position: absolute;
+    height: 100%;
+    width: 15px;
+    visibility: hidden;
+}
+
+.right-leg-1 {
+  right: 0;
+}
+
+.left-leg-2 {
   border-left: 2px solid white;
 }
 
-.right-leg {
+.right-leg-2 {
   right: 0;
   border-right: 2px solid white;
 }
