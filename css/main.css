@@ -152,12 +152,16 @@ input:focus {
 }
 
 input#input-letter {
-    font-size: 40px;
+    font-size: 35px;
     width: 70px;
     text-align: center;
     text-transform: uppercase;
     border-bottom: 2px solid white;
     color: white;
+}
+
+#input-new-word {
+  padding: 5px 10px;
 }
 
 button#submit-letter {
@@ -174,7 +178,7 @@ button#submit-letter {
 ol#word-letters > li {
   display: inline-block;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   padding: 0 20px;
   border-bottom: 2px solid white;
   margin: 0 5px;
