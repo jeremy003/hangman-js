@@ -246,6 +246,7 @@ var wordsArray = [
 ];
 
 var correctLetters = [];
+var numCorrectGuesses = 0;
 var guessedLetters = [];
 var guesses = 0;
 
@@ -255,6 +256,7 @@ function addToHangman() {
 
 function setUpGame(word) {
   correctLetters = word.split('');
+  numCorrectGuesses = 0;
   listElements = "";
   guessedLetters = [];
 
@@ -325,6 +327,7 @@ $(document).ready(function() {
         for(i = 0; i < 10; i++) {
           if(correctLetters[i] === checkLetter) {
             letterIndexArray.push(i);
+            numCorrectGuesses++;
           }
         }
 
@@ -337,6 +340,10 @@ $(document).ready(function() {
         guessedLetters.push(checkLetter);
         $("#message-box").html("<p>word has " + checkLetter +  "</p><p>guesses remaining: " + (6 - guesses) +
          "</p><p>guessed letters: " + guessedLetters + "</p>");
+
+         if(numCorrectGuesses >= correctLetters.length) {
+           alert("win");
+         }
       }
 
       // Guess was incorrect
