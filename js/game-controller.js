@@ -125,8 +125,6 @@ function setUpGame(word) {
 }
 
 $(document).ready(function() {
-  alert("ready");
-
   $("#input-new-word").focus();
 
   $("#submit-random-word").click(function() {
