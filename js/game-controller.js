@@ -91,6 +91,7 @@ var wordsArray = [
   "writing","written","yellow","yesterday","younger","yourself"
 ];
 
+var correctWord = "";
 var correctLetters = [];
 var numCorrectGuesses = 0;
 var guessedLetters = [];
@@ -103,6 +104,9 @@ function addToHangman() {
 function setUpGame(word) {
   correctLetters = word.split('');
   numCorrectGuesses = 0;
+
+  correctWord = word;
+  correctLetters = word.toUpperCase().split('');
   listElements = "";
   guessedLetters = [];
 
@@ -127,7 +131,7 @@ $(document).ready(function() {
 
   $("#submit-random-word").click(function() {
     var randomWord = wordsArray[Math.floor(Math.random() * (wordsArray.length - 1))];
-    setUpGame(randomWord.toUpperCase());
+    setUpGame(randomWord);
   });
 
   $("#input-new-word").keyup(function(event) {
@@ -137,7 +141,7 @@ $(document).ready(function() {
   });
 
   $("#submit-new-word").click(function() {
-    var userWord = String($("#input-new-word").val()).toUpperCase();
+    var userWord = String($("#input-new-word").val());
     if(userWord !== "") {
       setUpGame(userWord);
       $("#input-new-word").val("");
@@ -162,7 +166,7 @@ $(document).ready(function() {
 
     // Check if letter is in correct letters array and set index
     if($.inArray(checkLetter, guessedLetters) !== -1) {
-      $("#message-box").html("<p>Already guessed " + checkLetter +  "</p><p>guesses remaining: " + (6 - guesses) +
+      $("#message-box").html("<p>Already guessed " + checkLetter +  "</p><p>guesses remaining: " + (10 - guesses) +
        "</p><p>guessed letters: " + guessedLetters + "</p>");
     } else {
       letterIndex = $.inArray(checkLetter, correctLetters);
@@ -186,7 +190,7 @@ $(document).ready(function() {
 
         $(letterClass).html(correctLetters[letterIndex]);
         guessedLetters.push(checkLetter);
-        $("#message-box").html("<p>word has " + checkLetter +  "</p><p>guesses remaining: " + (6 - guesses) +
+        $("#message-box").html("<p>word has " + checkLetter +  "</p><p>guesses remaining: " + (10 - guesses) +
          "</p><p>guessed letters: " + guessedLetters + "</p>");
 
          if(numCorrectGuesses >= correctLetters.length) {
@@ -198,12 +202,17 @@ $(document).ready(function() {
       else {
         guessedLetters.push(checkLetter);
         addToHangman();
-        if(guesses >= 5) {
+        if(guesses >= 9) {
           $("#game-over-heading").html("Game Over");
+          if(correctWord === "") {
+            $("#correct-word").html("There was no word. Congratulations, you played yourself. Never play yourself.");
+          } else {
+            $("#correct-word").html('The word was "' + correctWord + '"');
+          }
           $("#game-over-screen").fadeIn(300);
         }
         guesses++;
-        $("#message-box").html("<p>word does not have " + checkLetter +  "</p><p>guesses remaining: " + (6 - guesses) +
+        $("#message-box").html("<p>word does not have " + checkLetter +  "</p><p>guesses remaining: " + (10 - guesses) +
          "</p><p>guessed letters: " + guessedLetters + "</p>");
       }
     }

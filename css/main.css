@@ -78,7 +78,7 @@ input:focus {
   visibility: hidden;
 }
 
-.left-arm, .right-arm {
+.left-arm-1, .right-arm-1 {
   height: 50px;
   width: 24px;
   position: absolute;
@@ -87,11 +87,23 @@ input:focus {
   visibility: hidden;
 }
 
-.left-arm {
+.left-arm-2, .right-arm-2 {
+  height: 50px;
+  width: 24px;
+  position: absolute;
+  top: 20px;
+  visibility: hidden;
+}
+
+.right-arm-1 {
+  right: 0;
+}
+
+.left-arm-2 {
   border-left: 2px solid white;
 }
 
-.right-arm {
+.right-arm-2 {
   right: 0;
   border-right: 2px solid white;
 }
@@ -103,19 +115,30 @@ input:focus {
   margin: auto;
 }
 
-.left-leg, .right-leg {
+.left-leg-1, .right-leg-1 {
     position: absolute;
     height: 100%;
-    width: 25px;
+    width: 16px;
     border-top: 2px solid white;
     visibility: hidden;
 }
 
-.left-leg {
+.left-leg-2, .right-leg-2 {
+    position: absolute;
+    height: 100%;
+    width: 15px;
+    visibility: hidden;
+}
+
+.right-leg-1 {
+  right: 0;
+}
+
+.left-leg-2 {
   border-left: 2px solid white;
 }
 
-.right-leg {
+.right-leg-2 {
   right: 0;
   border-right: 2px solid white;
 }
@@ -129,12 +152,16 @@ input:focus {
 }
 
 input#input-letter {
-    font-size: 40px;
+    font-size: 35px;
     width: 70px;
     text-align: center;
     text-transform: uppercase;
     border-bottom: 2px solid white;
     color: white;
+}
+
+#input-new-word {
+  padding: 5px 10px;
 }
 
 button#submit-letter {
@@ -151,7 +178,7 @@ button#submit-letter {
 ol#word-letters > li {
   display: inline-block;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   padding: 0 20px;
   border-bottom: 2px solid white;
   margin: 0 5px;
@@ -186,6 +213,12 @@ div#game-over-screen {
 #game-over-heading {
   color: white;
   font-size: 80px;
+}
+
+#correct-word {
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 #btn-play-again {
