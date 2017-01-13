@@ -124,6 +124,24 @@ function setUpGame(word) {
   $("#word-letters").html(listElements);
 }
 
+function showGameOver(result) {
+  switch (result) {
+    case "lose":
+      $("#game-over-heading").html("Game Over");
+      if(correctWord === "") {
+        $("#correct-word").html("There was no word. Congratulations, you played yourself. Never play yourself.");
+      } else {
+        $("#correct-word").html('The word was "' + correctWord + '"');
+      }
+      $("#game-over-screen").fadeIn(300);
+
+    case "win":
+      $("#game-over-heading").html("You Win!!!");
+      $("#correct-word").html("Congratulations, you're the smartest person in the world!");
+      $("#game-over-screen").fadeIn(300);
+  }
+}
+
 $(document).ready(function() {
   $("#input-new-word").focus();
 
@@ -192,7 +210,7 @@ $(document).ready(function() {
          "</p><p>guessed letters: " + guessedLetters + "</p>");
 
          if(numCorrectGuesses >= correctLetters.length) {
-           alert("win");
+           showGameOver("win");
          }
       }
 
@@ -201,13 +219,7 @@ $(document).ready(function() {
         guessedLetters.push(checkLetter);
         addToHangman();
         if(guesses >= 9) {
-          $("#game-over-heading").html("Game Over");
-          if(correctWord === "") {
-            $("#correct-word").html("There was no word. Congratulations, you played yourself. Never play yourself.");
-          } else {
-            $("#correct-word").html('The word was "' + correctWord + '"');
-          }
-          $("#game-over-screen").fadeIn(300);
+          showGameOver("lose");
         }
         guesses++;
         $("#message-box").html("<p>word does not have " + checkLetter +  "</p><p>guesses remaining: " + (10 - guesses) +
